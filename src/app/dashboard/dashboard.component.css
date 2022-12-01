@@ -1,0 +1,32 @@
+.bgimg {
+    background-color: #2089bb;
+}
+
+label,
+h3 {
+    color: azure;
+    -webkit-text-stroke: 1px black;
+}
+
+.box {
+    background-color: azure;
+}
+
+th {
+    background-color: #42454a;
+    color: white;
+}
+
+.hoverTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hoverTable td {
+    padding: 7px;
+    border: #000204 2px solid;
+}
+
+button {
+    margin: 5px;
+}

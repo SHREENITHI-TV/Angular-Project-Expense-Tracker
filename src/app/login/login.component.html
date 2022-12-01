@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <form #loginForm="ngForm" (ngSubmit)="onLoginHandler(loginForm)">
+        <div class="form-group">
+          <label>EMAIL*</label>
+          <input type="email" class="form-control" id="email" ngModel #emailForm="ngModel" name="email"
+            placeholder="scube@expensetracker.com" required email>
+          <div
+            *ngIf="(flag && emailForm.errors?.['required']) || (emailForm.invalid && emailForm.touched && emailForm.errors?.['required'])"
+            class="alert alert-danger" role="alert">
+            e-mail is required
+          </div>
+          <div *ngIf="emailForm.invalid && emailForm.touched && emailForm.errors?.['email']" class="alert alert-danger"
+            role="alert">
+            e-mail is invalid
+          </div>
+        </div>
+        <div class="form-group">
+          <label>PASSWORD*</label>
+          <input type="password" class="form-control" ngModel #passwordForm="ngModel" id="password" name="password"
+            minlength="6" maxlength="10" placeholder="Password" required>
+          <div *ngIf="passwordForm.invalid && passwordForm.touched && passwordForm.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Password is required*
+          </div>
+          <div *ngIf="passwordForm.invalid && passwordForm.touched && passwordForm.errors?.['minlength']"
+            class="alert alert-danger" role="alert">
+            6 characters minimum required<br>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-secondary btn-lg">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

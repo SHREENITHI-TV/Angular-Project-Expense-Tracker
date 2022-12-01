@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+        <div class="form-group">
+          <label>FIRSTNAME*</label>
+          <input type="text" class="form-control" ngModel #firstNameForm="ngModel" id="firstName" name="firstName"
+            placeholder="FirstName" required>
+        </div>
+        <div class="form-group">
+          <label>LASTNAME</label>
+          <input type="text" class="form-control" ngModel #lastNameForm="ngModel" id="lastName" name="lastName"
+            placeholder="LastName">
+        </div>
+        <div class="form-group">
+          <label>EMAIL*</label>
+          <input type="email" class="form-control" id="email" ngModel #emailNameForm="ngModel" name="email"
+            placeholder="scube@expensetracker.com" required email>
+          <div
+            *ngIf="(flag && emailNameForm.errors?.['required']) || (emailNameForm.invalid && emailNameForm.touched && emailNameForm.errors?.['required'])"
+            class="alert alert-danger" role="alert">
+            e-mail is required
+          </div>
+          <div *ngIf="emailNameForm.invalid && emailNameForm.touched && emailNameForm.errors?.['email']"
+            class="alert alert-danger" role="alert">
+            e-mail is invalid
+          </div>
+        </div>
+        <div class="form-group">
+          <label>PASSWORD*</label>
+          <input type="password" class="form-control" ngModel #passwordNameForm="ngModel" id="password" name="password"
+            minlength="6" maxlength="10" placeholder="Password" required>
+          <div *ngIf="passwordNameForm.invalid && passwordNameForm.touched && passwordNameForm.errors?.['required']"
+            class="alert alert-danger" role="alert">
+            Password is required*
+          </div>
+          <div *ngIf="passwordNameForm.invalid && passwordNameForm.touched && passwordNameForm.errors?.['minlength']"
+            class="alert alert-danger" role="alert">
+            6 characters minimum required<br>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary btn-lg">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+</div>

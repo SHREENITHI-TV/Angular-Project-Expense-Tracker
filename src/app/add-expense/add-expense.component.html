@@ -1,0 +1,50 @@
+<div class="bgimg">
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <form>
+          <div class="form-group">
+            <label>Expense Title</label>
+            <input [(ngModel)]="title" type="text" class="form-control" id="title" name="title"
+              placeholder="Expense Title" required>
+          </div>
+          <div class="form-group">
+            <label>Expense category</label>
+            <select [(ngModel)]="category" class="form-control" id="category" name="category" required>
+              <option>Accessories</option>
+              <option>Clothing</option>
+              <option>Daily Expense</option>
+              <option>Electric Bill</option>
+              <option>EMI</option>
+              <option>Food & Dining</option>
+              <option>Groceries</option>
+              <option>Health & Personal Care</option>
+              <option>Household Items</option>
+              <option>Insurance</option>
+              <option>Loan</option>
+              <option>Rent</option>
+              <option>Tax</option>
+              <option>Transportation</option>
+              <option>Travelling</option>
+              <option>Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Expense Amount in <i class="fa fa-inr" aria-hidden="true"></i></label>
+            <input [(ngModel)]="amount" type="number" class="form-control" id="amount" name="amount" required>
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input [(ngModel)]="date" type="date" class="form-control" id="date" name="date" placeholder="date"
+              required>
+          </div>
+          <button (click)="onSubmitHandler($event)" type="submit" class="btn btn-secondary btn-lg">Add</button>
+          <button routerLink="/dashboard" type="submit" class="btn btn-secondary btn-lg">Go to Dashboard!</button>
+        </form>
+      </div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+    </div>
+
+  </div>
+</div>
